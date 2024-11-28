@@ -1,0 +1,30 @@
+{
+	"name": "@modelcontextprotocol/server-stripe",
+	"version": "0.1.0",
+	"description": "MCP server for interacting with Stripe",
+	"license": "MIT",
+	"author": "Amir Hossain",
+	"homepage": "https://modelcontextprotocol.io",
+	"bugs": "https://github.com/modelcontextprotocol/servers/issues",
+	"type": "module",
+	"bin": {
+	  "mcp-server-stripe": "dist/index.js"
+	},
+	"files": [
+	  "dist"
+	],
+	"scripts": {
+	  "build": "tsc && shx chmod +x dist/*.js",
+	  "prepare": "npm run build",
+	  "watch": "tsc --watch"
+	},
+	"dependencies": {
+	  "@modelcontextprotocol/sdk": "latest",
+	  "stripe": "latest" 
+	},
+	"devDependencies": {
+	  "@types/node": "latest", 
+	  "shx": "^0.3.4",
+	  "typescript": "latest"
+	}
+      }
