@@ -9,6 +9,7 @@ import {
 import { promises as fs } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { SuggestionService } from './services/SuggestionService.js';
 
 
 // Define the path to the JSONL file, you can change this to your desired local path
@@ -364,6 +365,32 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
           required: ["names"],
         },
       },
+      {
+        name: "mcp_suggest",
+        description: "Analyze knowledge graph and suggest relevant MCP tools based on user context and interaction patterns",
+        inputSchema: {
+          type: "object",
+          properties: {
+            interactionCount: { 
+              type: "number", 
+              description: "Current interaction count to determine if suggestions should be made" 
+            },
+            availableTools: {
+              type: "array",
+              items: {
+                type: "object",
+                properties: {
+                  name: { type: "string" },
+                  description: { type: "string" },
+                  server: { type: "string" }
+                }
+              },
+              description: "List of available MCP tools that could be suggested"
+            }
+          },
+          required: ["interactionCount", "availableTools"]
+        }
+      },
     ],
   };
 });
@@ -397,6 +424,39 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       return { content: [{ type: "text", text: JSON.stringify(await knowledgeGraphManager.searchNodes(args.query as string), null, 2) }] };
     case "open_nodes":
       return { content: [{ type: "text", text: JSON.stringify(await knowledgeGraphManager.openNodes(args.names as string[]), null, 2) }] };
+    case "mcp_suggest": {
+      const suggestionService = new SuggestionService();
+      const { interactionCount, availableTools } = args as {
+        interactionCount: number;
+        availableTools: Array<{
+          name: string;
+          description: string;
+          server: string;
+        }>;
+      };
+      
+      if (!suggestionService.shouldSuggest(interactionCount)) {
+        return { 
+          content: [{ 
+            type: "text", 
+            text: "Not time for suggestions yet" 
+          }] 
+        };
+      }
+
+      const graph = await knowledgeGraphManager.readGraph();
+      const suggestions = await suggestionService.analyzePatternsAndSuggest(
+        graph,
+        availableTools
+      );
+
+      return { 
+        content: [{ 
+          type: "text", 
+          text: JSON.stringify(suggestions, null, 2) 
+        }] 
+      };
+    }
     default:
       throw new Error(`Unknown tool: ${name}`);
   }
