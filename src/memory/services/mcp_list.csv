@@ -1,0 +1,83 @@
+tool,category,simple description
+playwright-mcp-server,Browser Automation,Web content access and automation with Playwright.
+mcp-server-playwright,Browser Automation,Browser automation using Playwright.
+server-puppeteer,Browser Automation,Web scraping and interaction automation.
+mcp-server-youtube-transcript,Browser Automation,Fetch YouTube subtitles for AI analysis.
+mcp-server-apple-shortcuts,Browser Automation,Integration with Apple Shortcuts.
+Cloudflare MCP Server,Cloud Platforms,Integration with Cloudflare services like Workers, KV, R2, D1.
+Kubernetes MCP Server,Cloud Platforms,Operations on Kubernetes clusters.
+mcp-server-kubernetes,Cloud Platforms,Kubernetes operations in TypeScript.
+mcp-server-commands,Command Line,Run any command securely.
+cli-mcp-server,Command Line,Secure command line execution with policies.
+server-slack,Communication,Slack channel management and messaging.
+server-bluesky,Communication,Integration with Bluesky for interaction.
+mcp-gsuite,Communication,Gmail and Google Calendar integration.
+inoyu-mcp-unomi-server,Customer Data Platforms,Access and update profiles on Apache Unomi.
+OpenDataMCP,Customer Data Platforms,Connect open data to LLMs.
+mcp-tinybird,Customer Data Platforms,Interact with Tinybird Workspace.
+mcp-server-bigquery,Databases,BigQuery integration with schema inspection.
+mcp-bigquery-server,Databases,Google BigQuery access and querying.
+mysql_mcp_server,Databases,MySQL integration with security guidelines.
+server-postgres,Databases,PostgreSQL integration with schema inspection.
+server-sqlite,Databases,SQLite operations with analysis features.
+supabase-mcp-server,Databases,Manage projects and organisations in Supabase.
+mcp-server-duckdb,Databases,DuckDB integration with query capabilities.
+mongo-mcp,Databases,MongoDB integration for direct database interaction.
+mcp-mongo-server,Databases,MongoDB operations through MCP.
+vikingdb-mcp-server,Databases,VikingDB with vector search capabilities.
+mcp-neo4j,Databases,Neo4j integration for graph databases.
+docker-mcp,Developer Tools,Manage Docker containers via MCP.
+openapi-mcp-server,Developer Tools,Connect to any HTTP/REST API with OpenAPI spec.
+mcpProxy,Developer Tools,Integration with JetBrains IDE.
+mcp-server-data-exploration,Data Science Tools,Autonomous .csv dataset exploration.
+server-filesystem,File Systems,Direct local file system access.
+server-google-drive,File Systems,Google Drive file operations.
+mcp-filesystem-server,File Systems,Golang local file system access.
+coincap-mcp,Finance & Fintech,Real-time crypto market data integration.
+coinmarket-mcp-server,Finance & Fintech,Cryptocurrency listings and quotes.
+server-memory,Knowledge & Memory,Persistent memory using knowledge graphs.
+MemoryMesh,Knowledge & Memory,Graph-based memory for AI role-play.
+server-google-maps,Location Services,Google Maps integration for location data.
+server-sentry,Monitoring,Sentry integration for error tracking.
+server-raygun,Monitoring,Crash reporting and monitoring with Raygun.
+server-brave-search,Search,Web search using Brave's API.
+nyt,Search,Search articles using NYTimes API.
+server-fetch,Search,Web content fetching for AI.
+mcp-servers-kagi,Search,Kagi search API integration.
+exa-mcp-server,Search,Use Exa AI Search API for web searches.
+search1api-mcp,Search,Search via search1api (requires API key).
+mcp-server-tavily,Search,Tavily AI search API integration.
+arxiv-mcp-server,Search,Search ArXiv research papers.
+mcp-webresearch,Search,Google search and deep web research.
+mcp-simple-arxiv,Search,MCP for searching and reading arXiv papers.
+mcp-simple-pubmed,Search,MCP for medical/life sciences papers on PubMed.
+mcp-server-rag-web-browser,Search,Perform web searches and content scraping.
+NS Travel Information MCP Server,Travel & Transportation,Access Dutch Railways travel data.
+server-github,Version Control,GitHub repository management and operations.
+server-gitlab,Version Control,GitLab project management and CI/CD.
+server-git,Version Control,Local Git repository operations.
+mcp-openai,Other Tools and Integrations,Chat with OpenAI's models.
+godoc-mcp,Other Tools and Integrations,Go documentation access for AI.
+mcp-server-openai,Other Tools and Integrations,Query OpenAI models using MCP.
+server-everything,Other Tools and Integrations,Exercises all MCP protocol features.
+phabricator-mcp-server,Other Tools and Integrations,Interact with Phabricator API.
+mcp-obsidian,Other Tools and Integrations,Interact with Obsidian via REST API.
+mcp-obsidian,Other Tools and Integrations,Connect to Obsidian vaults for note access.
+mcp-youtube,Other Tools and Integrations,Fetch YouTube subtitles.
+notion_mcp,Other Tools and Integrations,Manage personal todo lists in Notion.
+wcgw,Other Tools and Integrations,Autonomous shell execution for Mac.
+ancestry-mcp,Other Tools and Integrations,Read .ged files and genetic data.
+apple-notes-mcp,Other Tools and Integrations,Read Apple Notes on macOS.
+mcp-notion-server,Other Tools and Integrations,Interact with Notion API.
+unichat-mcp-server,Other Tools and Integrations,Send requests to multiple AI services.
+mcp-miro,Other Tools and Integrations,Access MIRO whiteboards.
+mcp-atlassian,Other Tools and Integrations,Search and access Confluence content.
+any-chat-completions-mcp,Other Tools and Integrations,Chat with various chat completion APIs.
+mcp-installer,Other Tools and Integrations,Install other MCP servers.
+mcp-server-perplexity,Other Tools and Integrations,Interact with Perplexity API.
+wikimedia-enterprise-model-context-protocol,Other Tools and Integrations,Wikipedia article lookup.
+mcp-simple-timeserver,Other Tools and Integrations,Check local or UTC time.
+mcp-simple-openai-assistant,Other Tools and Integrations,Use any GPT model as an assistant.
+mcp-hfspace,Other Tools and Integrations,Use HuggingFace Spaces for AI tasks.
+mcp-manager,Other Tools and Integrations,Manage MCP servers via web UI.
+mcp-cli,Other Tools and Integrations,CLI for testing MCP servers.

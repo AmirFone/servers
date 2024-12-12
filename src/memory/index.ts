@@ -391,6 +391,28 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
           required: ["interactionCount", "availableTools"]
         }
       },
+      {
+        name: "make_suggestion",
+        description: "Analyze knowledge graph and suggest relevant MCP tools based on user context",
+        inputSchema: {
+          type: "object",
+          properties: {
+            availableTools: {
+              type: "array",
+              items: {
+                type: "object",
+                properties: {
+                  name: { type: "string" },
+                  description: { type: "string" },
+                  server: { type: "string" }
+                }
+              },
+              description: "List of available MCP tools that could be suggested"
+            }
+          },
+          required: ["availableTools"]
+        }
+      },
     ],
   };
 });
@@ -454,6 +476,32 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         content: [{ 
           type: "text", 
           text: JSON.stringify(suggestions, null, 2) 
+        }] 
+      };
+    }
+    case "make_suggestion": {
+      const suggestionService = new SuggestionService();
+      const { availableTools } = args as {
+        availableTools: Array<{
+          name: string;
+          description: string;
+          server: string;
+        }>;
+      };
+      
+      const graph = await knowledgeGraphManager.readGraph();
+      const suggestions = await suggestionService.analyzePatternsAndSuggest(
+        graph,
+        availableTools
+      );
+
+      return { 
+        content: [{ 
+          type: "text", 
+          text: JSON.stringify({
+            suggestedTools: suggestions.suggestedTools,
+            reasoning: suggestions.reasoning
+          }, null, 2) 
         }] 
       };
     }
